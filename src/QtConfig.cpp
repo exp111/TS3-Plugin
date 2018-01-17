@@ -16,5 +16,4 @@ QtConfig::~QtConfig()
 void QtConfig::saveToConfig()
 {
 	config->testBool = ui.checkBox->isChecked();
-	this->close();
 }

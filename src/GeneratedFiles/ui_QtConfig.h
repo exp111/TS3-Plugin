@@ -34,18 +34,20 @@ public:
         QtConfig->resize(284, 205);
         pushButton = new QPushButton(QtConfig);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(50, 140, 75, 23));
+        pushButton->setGeometry(QRect(24, 140, 101, 23));
+        pushButton->setCheckable(false);
         checkBox = new QCheckBox(QtConfig);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(40, 50, 70, 17));
         checkBox->setToolTipDuration(10);
         pushButton_2 = new QPushButton(QtConfig);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(160, 140, 75, 23));
+        pushButton_2->setGeometry(QRect(150, 140, 101, 23));
 
         retranslateUi(QtConfig);
         QObject::connect(pushButton, SIGNAL(clicked()), QtConfig, SLOT(saveToConfig()));
         QObject::connect(pushButton_2, SIGNAL(clicked()), QtConfig, SLOT(close()));
+        QObject::connect(pushButton, SIGNAL(clicked()), QtConfig, SLOT(close()));
 
         QMetaObject::connectSlotsByName(QtConfig);
     } // setupUi
