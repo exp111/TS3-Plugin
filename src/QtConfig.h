@@ -12,7 +12,7 @@ public:
 	QtConfig(QWidget *parent = Q_NULLPTR);
 	~QtConfig();
 public slots:
-	void toggled(int checked);
+	void saveToConfig();
 private:
 	Ui::QtConfig ui;
 };

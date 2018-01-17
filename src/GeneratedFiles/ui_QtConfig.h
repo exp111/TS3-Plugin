@@ -25,6 +25,7 @@ class Ui_QtConfig
 public:
     QPushButton *pushButton;
     QCheckBox *checkBox;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *QtConfig)
     {
@@ -33,15 +34,18 @@ public:
         QtConfig->resize(284, 205);
         pushButton = new QPushButton(QtConfig);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(100, 130, 75, 23));
+        pushButton->setGeometry(QRect(50, 140, 75, 23));
         checkBox = new QCheckBox(QtConfig);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(40, 50, 70, 17));
         checkBox->setToolTipDuration(10);
+        pushButton_2 = new QPushButton(QtConfig);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(160, 140, 75, 23));
 
         retranslateUi(QtConfig);
-        QObject::connect(pushButton, SIGNAL(clicked()), QtConfig, SLOT(close()));
-        QObject::connect(checkBox, SIGNAL(stateChanged(int)), QtConfig, SLOT(toggled(int)));
+        QObject::connect(pushButton, SIGNAL(clicked()), QtConfig, SLOT(saveToConfig()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), QtConfig, SLOT(close()));
 
         QMetaObject::connectSlotsByName(QtConfig);
     } // setupUi
@@ -49,11 +53,12 @@ public:
     void retranslateUi(QWidget *QtConfig)
     {
         QtConfig->setWindowTitle(QApplication::translate("QtConfig", "Test Plugin", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("QtConfig", "Ok", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("QtConfig", "Annehmen", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         checkBox->setToolTip(QApplication::translate("QtConfig", "<html><head/><body><p><span style=\" font-weight:600;\">shit</span></p></body></html>", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         checkBox->setText(QApplication::translate("QtConfig", "Test", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("QtConfig", "Abbrechen", Q_NULLPTR));
     } // retranslateUi
 
 };

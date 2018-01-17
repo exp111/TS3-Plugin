@@ -13,7 +13,8 @@ QtConfig::~QtConfig()
 {
 }
 
-void QtConfig::toggled(int changed)
+void QtConfig::saveToConfig()
 {
-	config->testBool = changed;
+	config->testBool = ui.checkBox->isChecked();
+	this->close();
 }

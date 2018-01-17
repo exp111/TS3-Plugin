@@ -16,14 +16,14 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>130</y>
+     <x>50</x>
+     <y>140</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Ok</string>
+    <string>Annehmen</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBox">
@@ -45,6 +45,19 @@
     <string>Test</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>140</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Abbrechen</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
@@ -53,7 +66,7 @@
    <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>QtConfig</receiver>
-   <slot>close()</slot>
+   <slot>saveToConfig()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>197</x>
@@ -66,23 +79,23 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox</sender>
-   <signal>stateChanged(int)</signal>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
    <receiver>QtConfig</receiver>
-   <slot>toggled(int)</slot>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>194</x>
-     <y>88</y>
+     <x>197</x>
+     <y>151</y>
     </hint>
     <hint type="destinationlabel">
-     <x>199</x>
-     <y>149</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>toggled(int)</slot>
+  <slot>saveToConfig()</slot>
  </slots>
 </ui>
